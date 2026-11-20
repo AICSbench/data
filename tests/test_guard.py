@@ -300,12 +300,25 @@ def test_actions_are_pinned_to_a_full_sha_with_a_version_comment(name):
             assert re.search(r"#\s*v\d+\.\d+\.\d+", m.group(2)), line
 
 
+# Every workflow and job, with exactly the permissions it may have. A new job or a
+# widened permission fails here until it is reviewed and added.
+PERMISSIONS = {
+    "guard.yml": {"guard": {"contents": "read", "pull-requests": "read"}},
+    "validate.yml": {"validate": {"contents": "read"}},
+    "test-guard.yml": {"test-guard": {"contents": "read"}},
+    "publish.yml": {"export": {"contents": "write"}, "notify-web": {}},
+}
+
+
+def test_workflows_are_the_reviewed_set():
+    assert set(ALL) == set(PERMISSIONS)
+
+
 @pytest.mark.parametrize("name", ALL)
-def test_every_job_declares_its_permissions(name):
+def test_job_permissions_match_the_allowlist(name):
     wf = _workflow(name)
     assert wf["permissions"] == {}
-    for job in wf["jobs"].values():
-        assert "permissions" in job
+    assert {job: spec.get("permissions") for job, spec in wf["jobs"].items()} == PERMISSIONS[name]
 
 
 def test_web_dispatch_token_only_in_notify_web():
@@ -313,12 +326,13 @@ def test_web_dispatch_token_only_in_notify_web():
         text = (WORKFLOWS / name).read_text(encoding="utf-8")
         if name != "publish.yml":
             assert "WEB_DISPATCH_TOKEN" not in text and not re.search(r"\bsecrets\.\w", text), name
-    jobs = _workflow("publish.yml")["jobs"]
-    for job_name, job in jobs.items():
+    wf = _workflow("publish.yml")
+    # Workflow-level keys (env, defaults, ...) reach every job, so none may hold the token.
+    outside_jobs = {key: value for key, value in wf.items() if key != "jobs"}
+    assert "WEB_DISPATCH_TOKEN" not in json.dumps(outside_jobs)
+    for job_name, job in wf["jobs"].items():
         found = "WEB_DISPATCH_TOKEN" in json.dumps(job)
         assert found == (job_name == "notify-web"), job_name
-    assert jobs["notify-web"]["permissions"] == {}
-    assert jobs["export"]["permissions"] == {"contents": "write"}
 
 
 def test_publish_is_serialized():
