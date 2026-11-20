@@ -11,11 +11,15 @@ on:
 
 permissions: {}
 
-# Exports never interleave. Queued runs may start out of order, so the export
-# job also skips publishing when its commit is no longer the head of main.
+# Exports never interleave. `queue: max` keeps every pending run instead of
+# replacing it (the default keeps one), so a re-run of an old commit cannot
+# drop the pending run for the newest one. Queued runs may start out of order,
+# so the export job also skips publishing when its commit is no longer the
+# head of main.
 concurrency:
   group: publish
   cancel-in-progress: false
+  queue: max
 
 env:
   # The benchmark version that exports. Keep it equal to validate.yml's.

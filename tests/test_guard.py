@@ -323,7 +323,7 @@ def test_web_dispatch_token_only_in_notify_web():
 
 def test_publish_is_serialized():
     wf = _workflow("publish.yml")
-    assert wf["concurrency"] == {"group": "publish", "cancel-in-progress": False}
+    assert wf["concurrency"] == {"group": "publish", "cancel-in-progress": False, "queue": "max"}
 
 
 @pytest.mark.parametrize("name", ["validate.yml", "test-guard.yml"])
