@@ -1,0 +1,6 @@
+# Changes to these paths need a Code Owner's review (enforced by the main-review
+# ruleset). The guard check also refuses them from anyone not in maintainers.txt.
+/verified-runs.txt  @dyaskur
+/maintainers.txt    @dyaskur
+/CODEOWNERS         @dyaskur
+/.github/           @dyaskur
