@@ -288,7 +288,8 @@ def test_guard_permissions_are_read_only():
 # --- All workflows: pinned actions, least privilege, token placement --------------------------
 
 
-ALL = sorted(p.name for p in WORKFLOWS.glob("*.yml"))
+# GitHub runs both extensions, so both must face the checks below.
+ALL = sorted(p.name for p in WORKFLOWS.iterdir() if p.suffix in {".yml", ".yaml"})
 
 
 @pytest.mark.parametrize("name", ALL)
