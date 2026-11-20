@@ -1,0 +1,103 @@
+# Validates the submissions a pull request adds and smoke-tests the site export.
+#
+# pull_request runs this file from the PR's own merge commit, so it only gets
+# read access and no secrets. The PR cannot weaken it unnoticed: changing
+# .github/ is refused by the guard check (guard.yml), which runs from main.
+name: validate
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: validate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  # The benchmark version that validates and exports. Bump it in its own PR.
+  AICSBENCH_REF: 6854e138ad6e262089dda9406345342c352a3ca3
+  # The pip-installed package ships no task catalog; it comes from the same ref.
+  BENCHMARK_TASKS_DIR: .aicsbench/benchmarks/tasks
+  BENCHMARK_STACKS_DIR: .aicsbench/benchmarks/stacks
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Check out the pull request
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2 # the merge commit and its first parent, the base
+          persist-credentials: false
+
+      - name: Check out the base branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+          persist-credentials: false
+
+      - name: Check out the benchmark's task catalog
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: aicsbench/aicsbench
+          ref: ${{ env.AICSBENCH_REF }}
+          path: .aicsbench
+          sparse-checkout: benchmarks
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Install the benchmark
+        run: pip install "aicsbench @ git+https://github.com/aicsbench/aicsbench@${AICSBENCH_REF}"
+
+      - name: List the submission folders this pull request adds
+        run: |
+          set -euo pipefail
+          # NUL-separated raw diff: file names are data, never shell words.
+          git diff --raw -z --no-renames --diff-filter=A HEAD^1 HEAD -- submissions/ |
+            python3 -c '
+          import sys
+          fields = sys.stdin.buffer.read().split(b"\0")
+          folders, bad = [], []
+          for meta, name in zip(fields[0::2], fields[1::2]):
+              path = name.decode("utf-8", "surrogateescape")
+              mode = meta.split()[1].decode()
+              parts = path.split("/")
+              if path == "submissions/.gitkeep":
+                  continue
+              if mode != "100644":
+                  bad.append(f"{path}: mode {mode}; bundles hold regular files only")
+              elif len(parts) < 4:
+                  bad.append(f"{path}: not inside submissions/<task_id>/<run_id>/")
+              elif "/".join(parts[:3]) not in folders:
+                  folders.append("/".join(parts[:3]))
+          for line in bad:
+              print(f"::error::{line}")
+          if bad:
+              sys.exit(1)
+          with open(sys.argv[1], "wb") as out:
+              out.write(b"".join(f.encode("utf-8", "surrogateescape") + b"\0" for f in folders))
+          print("\n".join(folders) or "no new submission folders")
+          ' "$RUNNER_TEMP/added-folders"
+
+      - name: Validate the new submissions (admission mode)
+        run: |
+          set -euo pipefail
+          mapfile -d '' folders < "$RUNNER_TEMP/added-folders"
+          if [ "${#folders[@]}" -eq 0 ]; then
+            echo "No submissions added; nothing to validate."
+            exit 0
+          fi
+          mkdir -p base/submissions # the base may have no submissions yet
+          aicsbench validate-submission --against base/submissions/ -- "${folders[@]}"
+
+      - name: Smoke-test the site export
+        run: aicsbench site export --data . --out "$RUNNER_TEMP/export" --base-url https://example.invalid/

@@ -1,0 +1,54 @@
+# File-and-author rules for every pull request to main.
+#
+# pull_request_target always takes this file and guard.py from the base branch.
+# This workflow never checks out the pull request's head and never executes any
+# of its files: it reads the changed-file list from the GitHub API as data.
+# Branch protection requires this check and `validate` (validate.yml).
+name: guard
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions: {}
+
+concurrency:
+  group: guard-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      # The base branch only: the default for pull_request_target. Never pass the PR's ref or SHA.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: List the pull request's changed files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          api="repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}"
+          gh api "$api" > "$RUNNER_TEMP/pull.json"
+          gh api --paginate "$api/files" \
+            --jq '.[] | {filename, status, previous_filename}' > "$RUNNER_TEMP/files.jsonl"
+          gh api "$api" > "$RUNNER_TEMP/pull-after.json"
+
+      - name: Check files and author (base branch's guard.py and maintainers.txt)
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 .github/scripts/guard.py \
+            --files "$RUNNER_TEMP/files.jsonl" \
+            --pull "$RUNNER_TEMP/pull.json" \
+            --pull-after "$RUNNER_TEMP/pull-after.json" \
+            --head-sha "$HEAD_SHA" \
+            --maintainers maintainers.txt

@@ -1,0 +1,127 @@
+# Publishes the site export on every merge to main and tells aicsbench/web to rebuild.
+#
+# Job `export` writes the export and commits it as the whole content of the
+# `export` branch. Job `notify-web` is the only place WEB_DISPATCH_TOKEN is used.
+name: publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+# Exports never interleave. `queue: max` keeps every pending run instead of
+# replacing it (the default keeps one), so a re-run of an old commit cannot
+# drop the pending run for the newest one. Queued runs may start out of order,
+# so the export job also skips publishing when its commit is no longer the
+# head of main.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+  queue: max
+
+env:
+  # The benchmark version that exports. Keep it equal to validate.yml's.
+  AICSBENCH_REF: 6854e138ad6e262089dda9406345342c352a3ca3
+  BENCHMARK_TASKS_DIR: .aicsbench/benchmarks/tasks
+  BENCHMARK_STACKS_DIR: .aicsbench/benchmarks/stacks
+
+jobs:
+  export:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      data_commit: ${{ steps.publish.outputs.data_commit }}
+      published: ${{ steps.publish.outputs.published }}
+    steps:
+      - name: Check out the triggering commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false # the token is passed to the push only
+
+      - name: Check out the benchmark's task catalog
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: aicsbench/aicsbench
+          ref: ${{ env.AICSBENCH_REF }}
+          path: .aicsbench
+          sparse-checkout: benchmarks
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13"
+
+      - name: Install the benchmark
+        run: pip install "aicsbench @ git+https://github.com/aicsbench/aicsbench@${AICSBENCH_REF}"
+
+      - name: Export the site data
+        env:
+          BASE_URL: ${{ vars.BASE_URL || 'https://aicsbench.github.io/web/' }}
+        run: aicsbench site export --data . --out "$RUNNER_TEMP/export" --base-url "$BASE_URL"
+
+      - name: Commit the export to the export branch
+        id: publish
+        env:
+          TOKEN: ${{ github.token }}
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          set -euo pipefail
+          auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          echo "::add-mask::$auth"
+          git() { command git -c "http.https://github.com/.extraheader=$auth" "$@"; }
+
+          git fetch --quiet origin main
+          head="$(git rev-parse origin/main)"
+          if [ "$head" != "$GITHUB_SHA" ]; then
+            echo "main is now at $head, not $GITHUB_SHA; a newer run publishes instead."
+            echo "published=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          parent=()
+          if git ls-remote --exit-code --heads origin export > /dev/null; then
+            git fetch --quiet origin export
+            parent=(-p "$(git rev-parse origin/export)")
+          else
+            echo "No export branch yet; creating it as an orphan."
+          fi
+
+          # Stage the export folder as the whole tree, without touching the checkout.
+          export GIT_INDEX_FILE="$RUNNER_TEMP/export.index"
+          git --work-tree="$RUNNER_TEMP/export" add --all --force .
+          tree="$(git write-tree)"
+          unset GIT_INDEX_FILE
+          commit="$(git commit-tree "$tree" "${parent[@]}" \
+            -m "data: export $(git rev-parse --short "$GITHUB_SHA")")"
+
+          git push origin "$commit:refs/heads/export"
+          echo "Pushed export $commit for main $GITHUB_SHA."
+          {
+            echo "data_commit=$GITHUB_SHA"
+            echo "published=true"
+          } >> "$GITHUB_OUTPUT"
+
+  notify-web:
+    needs: export
+    if: needs.export.outputs.published == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Ask aicsbench/web to rebuild
+        env:
+          GH_TOKEN: ${{ secrets.WEB_DISPATCH_TOKEN }}
+          DATA_COMMIT: ${{ needs.export.outputs.data_commit }}
+        run: |
+          gh api repos/aicsbench/web/dispatches \
+            -f event_type=data-published \
+            -f "client_payload[data_commit]=$DATA_COMMIT"
