@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "20261120T234103Z-c43c41",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "submitted_at": "2026-11-20T23:45:11Z",
+  "submitter": {
+    "name": "Muhammad Dyas Yaskur",
+    "github": "dyaskur"
+  },
+  "notes": "Single-trial URL Shortener API smoke test. Separate from the 120-trial benchmark batch.",
+  "platform_version": "0.1.0",
+  "platform_git_commit": "3a234a9877cc0424da216176ed693e840127d011",
+  "acceptance_suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+  "suite_hash_source": "run",
+  "logs_included": false,
+  "files": {
+    "manifest.json": "cf838f43c40c89df6ffcc47291f2250cf1c0bb03432fee0d8748319ca5dced2e",
+    "trials/t-d09b80ed8621.json": "3a70e5c719c8ce15bbf639b6715095fa62bf056c1851d0fe7b88d5ef627106b1"
+  }
+}
