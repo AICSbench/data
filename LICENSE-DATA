@@ -1,0 +1,15 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The benchmark result data in this repository (everything under `submissions/`
+and the site export on the `export` branch) is licensed under the Creative
+Commons Attribution 4.0 International License.
+
+Summary:   https://creativecommons.org/licenses/by/4.0/
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: "AICSbench contributors, https://github.com/aicsbench/data".
+Each submission names its submitter in its submission.json.
+
+Submitting a pull request that adds data to this repository means you agree to
+publish that data under this licence. The code in this repository (workflows,
+scripts and tests) is licensed separately under the MIT licence in LICENSE.
