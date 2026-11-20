@@ -16,10 +16,16 @@ from this repository.
 
 ## How to submit
 
-1. Run the benchmark and make a bundle:
-   `aicsbench submit <run_id>` (add `--with-logs` to include logs; read them first).
-2. Open a pull request that **adds** the bundle folder under `submissions/` and
-   nothing else. Fill in the checklist in the pull request template.
+1. Run the benchmark, then submit the run:
+   `aicsbench submit --run <run_id>` (add `--with-logs` to include logs; read
+   them first). It validates the bundle and, with the GitHub CLI (`gh`)
+   installed and logged in, forks this repository and opens the pull request
+   for you.
+2. To open the pull request by hand instead, write the bundle with
+   `aicsbench submit --run <run_id> --out <directory>`, copy
+   `<directory>/submissions/<task_id>/<run_id>/` into a fork of this
+   repository, and open a pull request that **adds** that folder and nothing
+   else. Either way, fill in the checklist in the pull request template.
 3. Two checks must pass:
    - **validate** checks the bundle (layout, hashes, task version, secret scan,
      duplicates) and builds the site export as a smoke test;
