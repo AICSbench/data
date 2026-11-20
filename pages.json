@@ -1,0 +1,53 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "kind": "home",
+      "title": "AI coding stack benchmark",
+      "description": "How AI coding agents (harness + model) perform across programming languages and frameworks, from verified benchmark runs.",
+      "params": {},
+      "sections": [],
+      "links": [
+        {
+          "path": "/leaderboard/",
+          "label": "Leaderboard"
+        },
+        {
+          "path": "/compare/",
+          "label": "Compare"
+        },
+        {
+          "path": "/methodology/",
+          "label": "Methodology"
+        }
+      ]
+    },
+    {
+      "path": "/leaderboard/",
+      "kind": "leaderboard",
+      "title": "Leaderboard",
+      "description": "Harness + model results across every task (newest version each), one table per stack, verified runs only.",
+      "params": {},
+      "sections": [],
+      "links": []
+    },
+    {
+      "path": "/compare/",
+      "kind": "compare",
+      "title": "Compare results",
+      "description": "Build a custom comparison of benchmark results in the browser.",
+      "params": {},
+      "sections": [],
+      "links": []
+    },
+    {
+      "path": "/methodology/",
+      "kind": "methodology",
+      "title": "Methodology",
+      "description": "How trials run, what each metric means, which results are comparable, and verified versus community runs.",
+      "params": {},
+      "sections": [],
+      "links": []
+    }
+  ]
+}
