@@ -9,6 +9,10 @@
       "sections": [],
       "links": [
         {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        },
+        {
           "path": "/leaderboard/",
           "label": "Leaderboard"
         },
@@ -19,6 +23,10 @@
         {
           "path": "/methodology/",
           "label": "Methodology"
+        },
+        {
+          "path": "/runs/20261120t234103z-c43c41-93bb5069/",
+          "label": "Run 20261120T234103Z-c43c41"
         }
       ]
     },
@@ -29,7 +37,12 @@
       "description": "Harness + model results across every task (newest version each), one table per stack, verified runs only.",
       "params": {},
       "sections": [],
-      "links": []
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        }
+      ]
     },
     {
       "path": "/compare/",
@@ -48,6 +61,365 @@
       "params": {},
       "sections": [],
       "links": []
+    },
+    {
+      "path": "/tasks/url-shortener-api/",
+      "kind": "task",
+      "title": "URL Shortener API",
+      "description": "Build a persistent URL shortener with click tracking.",
+      "params": {
+        "task": "url-shortener-api"
+      },
+      "sections": [
+        {
+          "heading": "By harness + model · stack express-latest · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "stack": "express-latest"
+          },
+          "by": "harness_model",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "codex + gpt-6-luna",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        },
+        {
+          "heading": "By stack · harness codex · model gpt-6-luna · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "harness": "codex",
+            "model": "gpt-6-luna"
+          },
+          "by": "stack",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "express-latest",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        }
+      ],
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/harnesses/codex/",
+          "label": "Harness codex"
+        },
+        {
+          "path": "/tasks/url-shortener-api/models/gpt-6-luna/",
+          "label": "Model gpt-6-luna"
+        },
+        {
+          "path": "/tasks/url-shortener-api/stacks/express-latest/",
+          "label": "Stack express-latest"
+        },
+        {
+          "path": "/runs/20261120t234103z-c43c41-93bb5069/",
+          "label": "Run 20261120T234103Z-c43c41"
+        }
+      ]
+    },
+    {
+      "path": "/tasks/url-shortener-api/harnesses/codex/",
+      "kind": "harness",
+      "title": "Harness codex on URL Shortener API",
+      "description": "Results of harness codex on the URL Shortener API task, by model, by stack and by harness version.",
+      "params": {
+        "task": "url-shortener-api",
+        "harness": "codex"
+      },
+      "sections": [
+        {
+          "heading": "By model · stack express-latest · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "stack": "express-latest"
+          },
+          "by": "model",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "gpt-6-luna",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        },
+        {
+          "heading": "By stack · model gpt-6-luna · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "model": "gpt-6-luna"
+          },
+          "by": "stack",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "express-latest",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        },
+        {
+          "heading": "By harness version · model gpt-6-luna · stack express-latest · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "model": "gpt-6-luna",
+            "stack": "express-latest"
+          },
+          "by": "harness_version",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "codex 0.167.2",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        }
+      ],
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        }
+      ]
+    },
+    {
+      "path": "/tasks/url-shortener-api/models/gpt-6-luna/",
+      "kind": "model",
+      "title": "Model gpt-6-luna on URL Shortener API",
+      "description": "Results of model gpt-6-luna on the URL Shortener API task, by harness and by stack.",
+      "params": {
+        "task": "url-shortener-api",
+        "model": "gpt-6-luna"
+      },
+      "sections": [
+        {
+          "heading": "By harness · stack express-latest · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "stack": "express-latest"
+          },
+          "by": "harness",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "codex",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        },
+        {
+          "heading": "By stack · harness codex · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44",
+            "harness": "codex"
+          },
+          "by": "stack",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "express-latest",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        }
+      ],
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        }
+      ]
+    },
+    {
+      "path": "/tasks/url-shortener-api/stacks/express-latest/",
+      "kind": "stack",
+      "title": "Stack express-latest on URL Shortener API",
+      "description": "Results of stack express-latest on the URL Shortener API task, by harness + model.",
+      "params": {
+        "task": "url-shortener-api",
+        "stack": "express-latest"
+      },
+      "sections": [
+        {
+          "heading": "By harness + model · version 1 · community results",
+          "fixed": {
+            "task": "url-shortener-api",
+            "task_version": "1",
+            "tooling_mode": "standard",
+            "auth_mode": "subscription",
+            "max_repairs": "0",
+            "max_parallel": "1",
+            "suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44"
+          },
+          "by": "harness_model",
+          "verified_only": false,
+          "rows": [
+            {
+              "value": "codex + gpt-6-luna",
+              "trials": 1,
+              "passed": 1,
+              "rate_limited": 0,
+              "timed": 1,
+              "mean_seconds": 66.437386,
+              "stdev_seconds": null,
+              "mean_cost_usd": null,
+              "cost_samples": 0,
+              "low_confidence": true,
+              "success_rate": 1.0
+            }
+          ],
+          "refused": null,
+          "matrix": null
+        }
+      ],
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        }
+      ]
+    },
+    {
+      "path": "/runs/20261120t234103z-c43c41-93bb5069/",
+      "kind": "run",
+      "title": "Run 20261120T234103Z-c43c41",
+      "description": "Run 20261120T234103Z-c43c41 of URL Shortener API (version 1): 1 trial(s), community result.",
+      "params": {
+        "run_id": "20261120T234103Z-c43c41",
+        "task": "url-shortener-api",
+        "task_version": "1",
+        "bundle": "submissions/url-shortener-api/20261120T234103Z-c43c41/"
+      },
+      "sections": [],
+      "links": [
+        {
+          "path": "/tasks/url-shortener-api/",
+          "label": "URL Shortener API"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,12 @@
 {
-  "runs": 0,
-  "trials": 0,
-  "tasks": []
+  "runs": 1,
+  "trials": 1,
+  "tasks": [
+    {
+      "id": "url-shortener-api",
+      "version": "1",
+      "name": "URL Shortener API",
+      "description": "Build a persistent URL shortener with click tracking."
+    }
+  ]
 }
