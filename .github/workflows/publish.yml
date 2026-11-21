@@ -23,7 +23,7 @@ concurrency:
 
 env:
   # The benchmark version that exports. Keep it equal to validate.yml's.
-  AICSBENCH_REF: 6854e138ad6e262089dda9406345342c352a3ca3
+  AICSBENCH_REF: 3a234a9877cc0424da216176ed693e840127d011
   BENCHMARK_TASKS_DIR: .aicsbench/benchmarks/tasks
   BENCHMARK_STACKS_DIR: .aicsbench/benchmarks/stacks
 
