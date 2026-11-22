@@ -1,6 +1,6 @@
 {
-  "runs": 2,
-  "trials": 121,
+  "runs": 3,
+  "trials": 361,
   "tasks": [
     {
       "id": "url-shortener-api",
