@@ -1,8 +1,8 @@
 {
   "export_schema": 1,
-  "built_at": "2026-11-22T11:46:29.241282Z",
+  "built_at": "2026-11-22T16:19:03.509213Z",
   "platform_version": "0.1.0",
   "platform_git_commit": null,
-  "data_commit": "95a8e365258d34991bb34bed3481637973886c42",
+  "data_commit": "ceee075e1d7f9a531cb835e3875768fbedb0b810",
   "base_url": "https://aicsbench.github.io/web/"
 }
