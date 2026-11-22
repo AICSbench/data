@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-60ad403e94d0",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 2,
+  "execution_order": 74,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "spring-boot",
+    "language": "java",
+    "language_version": "21",
+    "framework": "spring-boot",
+    "framework_version": "3.4.5",
+    "image_ref": "maven:3.9.9-eclipse-temurin-21",
+    "image_digest": "sha256:fb6d3f2d70fd6cb67d3feb0f48c18c1cf61a690ed6cdccee535e35cbaf3bdc67",
+    "agent_image_ref": "ai-benchmark/spring-boot-commandcode:ddc3a18c8323b5a1",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "21.0.7",
+      "framework": "3.4.5"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-21T21:46:13.366289Z",
+  "finished_at": "2026-11-21T21:49:19.170033Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 153.486131,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 153.486131,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 185.80392003338784,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 831171,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 23718,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 811392,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 854889,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 509,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 39,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "54bf85ee601f299d24747ab931b38278f5444937",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "84633161-bb87-41a4-b321-c459481d4232",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 831171,
+      "outputTokens": 23718,
+      "cacheReadTokens": 811392,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 151238,
+    "finalText": "Implementation complete and fully verified. Summary of what I built:\n\n**Stack**: Spring Boot 3.4.5 / Java 21, Spring Data JPA, Flyway, PostgreSQL driver.\n\n**Code** (`src/main/java/bench/app/`):\n- `Link` entity + `LinkRepository` (findByCode, existsByCode, atomic `UPDATE ... SET clicks = clicks + 1`)\n- `LinkService` — validates URL via `java.net.URI` (must be absolute http/https with a host), validates custom codes against `^[A-Za-z0-9_-]{4,20}$`, generates 8-char random codes with collision retry, returns submitted URLs unchanged\n- `LinkController` (POST /links → 201, GET /links, GET /links/{code}) and `RedirectController` (GET /r/{code} → 302 + Location, increments exactly once)\n- `ApiExceptionHandler` — 409 duplicate code, 404 unknown code, 422 for malformed JSON/invalid url/invalid code, all with `{\"error\": \"...\"}` bodies\n\n**Infra**:\n- `V1__create_links.sql` Flyway migration; schema fully owned by Flyway (`ddl-auto=none`)\n- `start.sh` parses `DATABASE_URL` (postgresql://user:pass@host:port/db) into `SPRING_DATASOURCE_*` env vars — no hard-coded credentials — then serves in the foreground on `0.0.0.0:8000`; migrations apply at startup before the server accepts requests\n- README with a \"Starting the server\" section\n\n**Verification**: 29/29 smoke checks passed (all endpoints, all 422/404/409 cases, click-count exactness, list ordering). Restarted the server and confirmed clicks and data survived. Database truncated to a clean state, port 8000 free, no leftover processes."
+  }
+}

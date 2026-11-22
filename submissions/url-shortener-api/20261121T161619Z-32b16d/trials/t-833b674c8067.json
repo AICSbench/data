@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-833b674c8067",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 9,
+  "execution_order": 33,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "laravel",
+    "language": "php",
+    "language_version": "8.3",
+    "framework": "laravel",
+    "framework_version": "11",
+    "image_ref": "ai-benchmark/stack-laravel:b87d00038212a77d",
+    "image_digest": "sha256:a92f7d87698bafa9b2876e512a6d05b295f63efe6558359050d3f9a9c7e6e048",
+    "agent_image_ref": "ai-benchmark/laravel-commandcode:358de7373a152369",
+    "services": [
+      "mysql"
+    ],
+    "installed_versions": {
+      "language": "8.3.13",
+      "framework": "11.57.1"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-21T18:55:25.467733Z",
+  "finished_at": "2026-11-21T19:02:04.835972Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 367.459474,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 367.459474,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 399.36826629098505,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 2946085,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 36434,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 2898560,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 2982519,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 2351,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 55,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "2ea08ef42c4c549cf5c778628d33bfb585436cbb",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-mysql": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "a0feed57-5ff0-4c1e-bdf2-e44b2b4dabc6",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 2946085,
+      "outputTokens": 36434,
+      "cacheReadTokens": 2898560,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 365465,
+    "finalText": "The URL Shortener API is complete and fully tested. Here's what I built:\n\n**Implementation**\n- **Laravel 11.57.1** scaffolded via Composer (deps installed in `vendor/`, nothing installed in start.sh)\n- `links` migration: unique `code` (varchar 20), `url` text, `clicks` counter — Eloquent `Link` model with an integer cast so clicks are real JSON numbers\n- `LinkController` with `store` / `index` / `show` / `redirect`; validation returns a flat `error` field: 422 for malformed JSON / bad URLs / bad codes, 409 for duplicate custom codes (plus a unique-index race backstop), 404 for unknown codes\n- URL validation requires an absolute `http`/`https` URL with a host (`filter_var` + scheme/host checks); submitted URLs are stored and echoed unchanged, and responses use `JSON_UNESCAPED_SLASHES` so the raw body carries the exact URL\n- Routes registered in `routes/api.php` with `apiPrefix: ''` in `bootstrap/app.php`, so paths are exactly `/links`, `/links/{code}`, `/r/{code}`\n- Redirects use `302` with the exact stored URL in `Location` and one atomic `clicks + 1` update\n\n**Configuration**\n- `.env` contains no DB settings at all — the app reads `DB_*` exclusively from the process environment (verified no credentials anywhere in the code)\n- `start.sh` (executable): `php artisan migrate --force`, then `exec php artisan serve --host=0.0.0.0 --port=8000 --no-reload`, with 4 CLI server workers for concurrent clients\n- README includes the \"Starting the server\" section\n\n**Verified by tests (58/58 checks passing)**\n- Create with generated/custom codes, duplicate → 409, all invalid URL/code variants and malformed JSON → 422, unknown codes → 404 JSON\n- Redirect incremented clicks exactly once (1, 2, 3…), Location matched exactly including query and fragment\n- Listing returned ascending creation order with correct `total`\n- 120-request burst: zero 429s (no throttling)\n- Killed and restarted the server twice: all links and click counts survived\n- Test data cleaned afterwards — the harness starts with an empty table, migrations idempotent (\"Nothing to migrate\" on re-run), port 8000 left free"
+  }
+}

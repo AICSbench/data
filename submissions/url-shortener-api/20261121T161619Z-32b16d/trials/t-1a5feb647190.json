@@ -1,0 +1,228 @@
+{
+  "trial_id": "t-1a5feb647190",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 15,
+  "execution_order": 112,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "aspnet-core",
+    "language": "csharp",
+    "language_version": "12",
+    "framework": "aspnet-core",
+    "framework_version": "8.0.15",
+    "image_ref": "mcr.microsoft.com/dotnet/sdk:8.0.408-bookworm-slim",
+    "image_digest": "sha256:7e2205326ce1d3adc97c9e60d5c4e1ded3c0d501efd1e36a2abcf3c150f6910a",
+    "agent_image_ref": "ai-benchmark/aspnet-core-commandcode:47ba3213551f0a21",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "12.0",
+      "framework": "8.0.15",
+      "dotnet-sdk": "8.0.408"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-22T00:05:28.726593Z",
+  "finished_at": "2026-11-22T00:08:52.260980Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 186.678008,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 186.678008,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 203.5344134233892,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1221106,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 29344,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1187328,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1250450,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 565,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 14,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "d9b8da9bcb28e8f4f708544f617b021d41a383df",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "7328f3dc-a553-48bb-b887-ddd355abe416",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1221106,
+      "outputTokens": 29344,
+      "cacheReadTokens": 1187328,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 184842,
+    "finalText": "Done. The URL Shortener API is complete and fully verified.\n\n**What I built** (empty workspace, so created the project from scratch):\n- `Program.cs` — minimal API: `POST /links` (201 with `{code, url, clicks:0}`, 409 on duplicate code, 422 on malformed JSON / bad url / bad code via manual JSON parsing), `GET /links` (ascending order, `{items, total}`), `GET /links/{code}` (200/404), `GET /r/{code}` (302 + Location, atomic `ExecuteUpdate` increment so clicks count exactly once even under concurrency)\n- `AppDbContext.cs` / `Link.cs` / `Migrations/` — EF Core 8 + Npgsql with a unique index on `code`, migrations generated via a local dotnet-ef tool manifest\n- `DatabaseConfig.cs` — parses the `DATABASE_URL` PostgreSQL URL (credentials only from env, nothing hard-coded)\n- `start.sh` — applies pending migrations, then serves in the foreground on `0.0.0.0:8000`\n- `README.md` — start-the-server section plus endpoint docs\n\n**Verification**: a 35-check curl suite passed 35/35 covering every requirement (generated codes 4–20 chars, duplicate → 409, all 422 cases, 404s, 302 Location exactness, list ordering). I then restarted the server via `sh start.sh` — state was byte-identical after restart (clicks and links persisted in Postgres) and redirects kept incrementing. Test server has been stopped, so port 8000 is free."
+  }
+}

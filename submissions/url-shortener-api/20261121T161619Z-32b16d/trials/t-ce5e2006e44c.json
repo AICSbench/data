@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-ce5e2006e44c",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 10,
+  "execution_order": 8,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "laravel",
+    "language": "php",
+    "language_version": "8.3",
+    "framework": "laravel",
+    "framework_version": "11",
+    "image_ref": "ai-benchmark/stack-laravel:b87d00038212a77d",
+    "image_digest": "sha256:a92f7d87698bafa9b2876e512a6d05b295f63efe6558359050d3f9a9c7e6e048",
+    "agent_image_ref": "ai-benchmark/laravel-commandcode:358de7373a152369",
+    "services": [
+      "mysql"
+    ],
+    "installed_versions": {
+      "language": "8.3.13",
+      "framework": "11.57.1"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-21T16:54:56.326580Z",
+  "finished_at": "2026-11-21T17:00:22.781178Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 294.270753,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 294.270753,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 326.4546237224713,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1488253,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 38360,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1432576,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1526613,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 2392,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 55,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "032c2988506f87fc099d9508988985764e7ff141",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-mysql": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "d7530042-14de-4df3-bd16-11fe6ec59134",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1488253,
+      "outputTokens": 38360,
+      "cacheReadTokens": 1432576,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 292296,
+    "finalText": "Implementation complete and fully verified. Summary of what I built:\n\n**Setup** — Created a Laravel 11 project with Composer (scaffolded in /tmp, moved into /workspace around the existing .git), dependencies installed.\n\n**Code** — `routes/api.php` registered with `apiPrefix: ''` in `bootstrap/app.php`; a `links` migration (unique case-sensitive `code` via `ascii_bin` collation, text `url`, `clicks` counter); an Eloquent `Link` model; and a `LinkController` with manual validation producing `{\"error\": ...}` on 409/404/422, URL validation requiring an absolute http/https URL with a host via `parse_url`, code rule `^[A-Za-z0-9_-]{4,20}$`, collision-safe random code generation, and an atomic SQL `increment` for clicks.\n\n**Config** — Stripped all `DB_*` lines from `.env` so the provided environment variables are the sole database source; `start.sh` applies migrations (with a short retry for DB startup races) then runs `php artisan serve --host=0.0.0.0 --port=8000 --no-reload` in the foreground; README has a \"Starting the server\" section.\n\n**Verification** — A 40-check HTTP battery passed (39 functional PASS; the single reported \"FAIL\" was whitespace in my own assertion — all 80 burst requests returned 200, confirming no throttling). Covered: 201 responses with unchanged URLs and `clicks: 0`, duplicate code 409, all 422 validation cases including malformed JSON, exact 302 Location headers, clicks incrementing exactly once per redirect and never via `GET /links/{code}`, ascending list order, case-sensitive codes, and click counts plus links surviving a full server restart. Server was stopped afterward and the database left in a clean, freshly-migrated state with an empty `links` table."
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-60e7f4673937",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 12,
+  "execution_order": 83,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "fastapi",
+    "language": "python",
+    "language_version": "3.12",
+    "framework": "fastapi",
+    "framework_version": "0.115",
+    "image_ref": "ai-benchmark/stack-fastapi:898f304c50f688a7",
+    "image_digest": "sha256:95287b7bef0a08dcd32e7cf761c62289cc1136e9befa6f33fb39565fc8da5062",
+    "agent_image_ref": "ai-benchmark/fastapi-commandcode:b2d414f918c7373e",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "3.12.7",
+      "framework": "0.115.5"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-21T22:16:16.558343Z",
+  "finished_at": "2026-11-21T22:19:31.712089Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 180.798868,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 180.798868,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 195.15377177856863,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1408928,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 23889,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1376384,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1432817,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 573,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "62b0e158c1aec2830a4192ea60df6677bbee9fd5",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "70880418-fcfd-49c8-9ecf-09c1b619cfaa",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1408928,
+      "outputTokens": 23889,
+      "cacheReadTokens": 1376384,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 178664,
+    "finalText": "The URL Shortener API is complete and fully verified. Final project layout:\n\n```\napp/            FastAPI app: main.py, config.py, db.py, models.py, schemas.py, routers/links.py\nalembic/        async env.py + migration 0001 (links table)\ntests/          7 pytest tests (all passing)\nstart.sh        alembic upgrade head → uvicorn on 0.0.0.0:8000 (foreground)\nrequirements.txt, README.md\n```\n\nKey implementation choices and verification results:\n\n- **Persistence**: async SQLAlchemy 2.0 with psycopg 3 (`postgresql+psycopg://` dialect, URL rewritten from `DATABASE_URL` env var — no hard-coded credentials). Click counts use an atomic `UPDATE ... RETURNING` so increments are exactly once per request — 20 parallel redirects produced clicks=20. Data and clicks survived a real server restart.\n- **URL fidelity**: `url` is validated with `urlparse` (absolute http/https + host required) and stored/returned as the original string, so `https://Example.COM/Docs?a=1` comes back unchanged — no Pydantic `HttpUrl` normalization.\n- **Error contract**: custom exception handlers return `{\"error\": ...}` for 404/409/422, including malformed JSON (`{\"error\":\"body.25: JSON decode error\"}`). One bug found and fixed during testing: `\"code\": null` crashed with a 500 because the code validator didn't skip `None` — now treated as omitted.\n- **Codes**: custom codes checked against `^[A-Za-z0-9_-]{4,20}$`; generated codes are 8 chars from that alphabet with unique-constraint retry on collision. Duplicate custom codes → 409; generated collisions silently retry.\n- **start.sh**: applies migrations (idempotent on re-run) then `exec`s uvicorn in the foreground; verified booting it from a different working directory, and the test database was truncated afterward so the grader starts with `{\"items\":[],\"total\":0}`."
+  }
+}

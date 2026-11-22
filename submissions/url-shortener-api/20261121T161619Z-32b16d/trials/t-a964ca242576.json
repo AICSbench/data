@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-a964ca242576",
+  "run_id": "20261121T161619Z-32b16d",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 15,
+  "execution_order": 177,
+  "max_repairs": 0,
+  "max_parallel": 1,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "z-ai/glm-5.3-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "z-ai/glm-5.3-flash"
+  },
+  "environment": {
+    "stack": "spring-boot",
+    "language": "java",
+    "language_version": "21",
+    "framework": "spring-boot",
+    "framework_version": "3.4.5",
+    "image_ref": "maven:3.9.9-eclipse-temurin-21",
+    "image_digest": "sha256:fb6d3f2d70fd6cb67d3feb0f48c18c1cf61a690ed6cdccee535e35cbaf3bdc67",
+    "agent_image_ref": "ai-benchmark/spring-boot-commandcode:ddc3a18c8323b5a1",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "21.0.7",
+      "framework": "3.4.5"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-22T04:34:29.537484Z",
+  "finished_at": "2026-11-22T04:38:13.536346Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 191.289746,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 191.289746,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 223.9988884376362,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 701675,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 20668,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 670208,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 722343,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 547,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 41,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "ab90cdaef84e4f6c43552a455228b701598056f6",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "552ca988-2d9f-4607-b0d0-fa51d79240c9",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 701675,
+      "outputTokens": 20668,
+      "cacheReadTokens": 670208,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 189112,
+    "finalText": "The URL Shortener API is complete and fully tested. Summary of what I built:\n\n**Stack**: Spring Boot 3.4.5 on Java 21 with Spring Data JPA (idiomatic persistence), Flyway migrations, and the PostgreSQL driver — all added to the provided pom.xml with the spring-boot-maven-plugin for a runnable fat jar.\n\n**How it works**:\n- `POST /links` — validates the URL is absolute http/https with a host (raw `java.net.URI` parse, URL returned unchanged), validates custom codes against `^[A-Za-z0-9_-]{4,20}$`, generates an 8-char unique code when omitted, returns 201; duplicates return 409 (pre-check plus unique-index safety net)\n- `GET /links/{code}` / `GET /r/{code}` — 200 with `{code, url, clicks}` and 302 redirect respectively; the redirect increments clicks via an atomic `UPDATE ... SET clicks = clicks + 1` so each request counts exactly once; unknown codes return 404 with an `error` field\n- `GET /links` — ascending creation order (by id) as `{items, total}`\n- All error paths (malformed JSON, missing/invalid url, invalid code) return 422 JSON via a `@RestControllerAdvice`\n- `DATABASE_URL` (postgresql:// form) is translated into Spring datasource properties by an `EnvironmentPostProcessor` — no hard-coded credentials; Flyway applies migrations before Tomcat starts serving\n\n**Verified end-to-end**: all 14 POST validation/creation cases, redirect + exact click increments, 404s, listing order, restart persistence (clicks and links survived), second-boot migration skip, and reachability on a non-loopback interface. Dependencies were downloaded and the jar prebuilt during development, so `sh start.sh` just runs it in the foreground on 0.0.0.0:8000 with no network needed. All test servers are stopped and the port is free."
+  }
+}
