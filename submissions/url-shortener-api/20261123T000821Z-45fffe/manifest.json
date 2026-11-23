@@ -1,0 +1,172 @@
+{
+  "run_id": "20261123T000821Z-45fffe",
+  "created_at": "2026-11-23T00:08:21.952673Z",
+  "platform_version": "0.1.0",
+  "platform_git_commit": "1a374c5506d2e89194a6e513c67e46599e1d7367",
+  "seed": 1664352730,
+  "auth_mode": "subscription",
+  "experiment": {
+    "task": "url-shortener-api",
+    "agents": [
+      {
+        "agent": "commandcode",
+        "model": "tencent/hy4-flash",
+        "reasoning_effort": null,
+        "options": {},
+        "auth": null,
+        "endpoint": null
+      }
+    ],
+    "stacks": [
+      "fastapi-latest",
+      "laravel",
+      "laravel13-boost",
+      "express-latest",
+      "rails",
+      "go-chi",
+      "spring-boot",
+      "aspnet-core",
+      "axum",
+      "nestjs"
+    ],
+    "trials": 5,
+    "tooling": {
+      "mode": "standard",
+      "enabled_tools": [],
+      "mcp_servers": []
+    },
+    "auth_mode": "subscription",
+    "timeouts": null,
+    "randomize_order": true,
+    "seed": 1664352730,
+    "max_parallel": 3,
+    "max_repairs": 0,
+    "stop_on_infra_error": false,
+    "labels": {}
+  },
+  "task_snapshot": {
+    "id": "url-shortener-api",
+    "name": "URL Shortener API",
+    "version": "1",
+    "description": "Build a persistent URL shortener with click tracking.",
+    "functional_requirements": [
+      "POST /links accepts JSON {\"url\": \"https://...\", \"code\": \"optional-code\"}. The url is required and must be an absolute http or https URL with a host. A custom code is optional; when omitted, generate a unique code. Codes contain 4 to 20 ASCII letters, digits, hyphens or underscores.",
+      "POST /links returns 201 JSON {\"code\": string, \"url\": string, \"clicks\": 0}. Return the submitted URL unchanged. A duplicate custom code returns 409 JSON with an error field.",
+      "GET /links/{code} returns 200 JSON {\"code\": string, \"url\": string, \"clicks\": integer}. Unknown codes return 404 JSON with an error field.",
+      "GET /r/{code} returns 302 with Location equal to the stored URL and increments clicks exactly once. Unknown codes return 404 JSON with an error field.",
+      "GET /links lists links in ascending creation order as 200 JSON {\"items\": [...], \"total\": integer}. Each item has the same fields as GET /links/{code}.",
+      "Malformed JSON, invalid or missing url, and invalid code return 422 JSON with an error field."
+    ],
+    "technical_requirements": [
+      "Use the provided relational database and framework's idiomatic persistence layer. Read database settings from the environment; do not hard-code credentials.",
+      "Data and click counts must survive a server restart.",
+      "Provide an executable start.sh in the project root. `sh start.sh` must apply pending migrations and then serve the API in the foreground on 0.0.0.0:8000. Install dependencies while you work, not in start.sh.",
+      "Include a README section explaining how to start the server."
+    ],
+    "initial_state": {
+      "mode": "build_from_scratch",
+      "template": null
+    },
+    "prompt_template": "You are implementing \"$task_name\" using $framework $framework_version on\n$language $language_version. The project lives in the current directory\n($workdir), which may contain a stack-provided starter project.\n\n$description\n\nFunctional requirements:\n$functional_requirements\n\nTechnical requirements:\n$technical_requirements\n\nEnvironment:\n$environment_notes\n\nWhen you are done, the API will be started with `sh start.sh` and checked by\nan automated HTTP test suite against exactly the requirements above.\nWork autonomously until the implementation is complete. Do not ask questions.",
+    "supported_stacks": [
+      "fastapi",
+      "fastapi-latest",
+      "laravel",
+      "laravel13-boost",
+      "express",
+      "express-latest",
+      "rails",
+      "go-chi",
+      "spring-boot",
+      "aspnet-core",
+      "axum",
+      "nestjs"
+    ],
+    "acceptance_tests": {
+      "suite": "acceptance",
+      "image": null,
+      "command": [
+        "pytest",
+        "-q",
+        "/acceptance",
+        "--junitxml=/results/junit.xml"
+      ],
+      "results_file": "junit.xml",
+      "completed_exit_codes": [
+        0,
+        1
+      ],
+      "app_start_command": [
+        "sh",
+        "start.sh"
+      ],
+      "app_port": 8000,
+      "result_format": "junit"
+    },
+    "timeouts": {
+      "setup_seconds": 600,
+      "agent_seconds": 1800,
+      "tests_seconds": 600
+    },
+    "default_trials": 3,
+    "extension_phases": []
+  },
+  "trial_ids": [
+    "t-ddb2189b31e4",
+    "t-37494c9fa147",
+    "t-590e468c68ae",
+    "t-b3048ebaec8a",
+    "t-7e4c13dabc97",
+    "t-57e1217dc789",
+    "t-2e7ad2c7271d",
+    "t-4d8b986a4f2b",
+    "t-6d1aab3b55be",
+    "t-45b090ed31d0",
+    "t-31031708da89",
+    "t-62c76dbddffd",
+    "t-d050e23b7afb",
+    "t-9cb45d86fad7",
+    "t-cb81e350303d",
+    "t-341d45b283c0",
+    "t-2d1009366a5d",
+    "t-69d321528023",
+    "t-65f5606fb32b",
+    "t-fb3fe154aa31",
+    "t-1933a8b796c0",
+    "t-b02ae8603fc4",
+    "t-ecf408414911",
+    "t-cdbc5a5ad47f",
+    "t-30c103d5929d",
+    "t-b18f26a285ce",
+    "t-ff4ae030954b",
+    "t-a7996797c267",
+    "t-6d1eb7972119",
+    "t-a131f16c1ec2",
+    "t-cb78ac4b3750",
+    "t-e1eb201df0ab",
+    "t-1e4ad073482b",
+    "t-daa2a536d78e",
+    "t-f215cb62c1cf",
+    "t-741825857861",
+    "t-08bfd68097bc",
+    "t-9f60c1d37e98",
+    "t-ebcf0eda5b16",
+    "t-cd95ff7efd83",
+    "t-6a4f913b8ab8",
+    "t-a63f2cf6000f",
+    "t-e843ca847f76",
+    "t-5662afe0c1f5",
+    "t-df52316bf24e",
+    "t-e99aa4fb2af5",
+    "t-734dcdf7a4fe",
+    "t-345af127975f",
+    "t-97455074140c",
+    "t-bcd285a9e3c4"
+  ],
+  "host": {
+    "platform": "Linux-6.17.0-1019-oracle-aarch64-with-glibc2.39",
+    "python": "3.12.3",
+    "machine": "aarch64"
+  },
+  "acceptance_suite_sha256": "4211b9ba531c4fcb3be19ac093e48ef9589da2d43d4fc5ca5436432f9941be44"
+}

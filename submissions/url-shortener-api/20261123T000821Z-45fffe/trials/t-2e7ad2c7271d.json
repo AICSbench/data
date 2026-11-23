@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-2e7ad2c7271d",
+  "run_id": "20261123T000821Z-45fffe",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 1,
+  "execution_order": 6,
+  "max_repairs": 0,
+  "max_parallel": 3,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "tencent/hy4-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "tencent/hy4-flash"
+  },
+  "environment": {
+    "stack": "axum",
+    "language": "rust",
+    "language_version": "1.86.0",
+    "framework": "axum",
+    "framework_version": "0.8.4",
+    "image_ref": "rust:1.86.0-bookworm",
+    "image_digest": "sha256:37fb1961beeee66240fdb54cb34270e5ebc20513b1e3ace163930b800b69e312",
+    "agent_image_ref": "ai-benchmark/axum-commandcode:963fa1eb4cd195ad",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "1.86.0",
+      "framework": "0.8.4"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-23T00:16:44.206619Z",
+  "finished_at": "2026-11-23T00:31:24.055045Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 816.16614,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 816.16614,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 879.8487891675904,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1473843,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 14123,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1422848,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1487966,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 14708,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 4003,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "038ea8a263de03cd88743e3ce6415b939561143d",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "096b1d7a-7623-41ea-8993-1bf1428a9a83",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1473843,
+      "outputTokens": 14123,
+      "cacheReadTokens": 1422848,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 812953,
+    "finalText": "Implemented the Axum + sqlx URL shortener with PostgreSQL persistence, click tracking, validation, migrations, and `start.sh`. Verified all endpoints, error statuses, restart persistence, and cleared test data; no server process is left running. Start with `sh start.sh`."
+  }
+}

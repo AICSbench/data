@@ -1,0 +1,227 @@
+{
+  "trial_id": "t-69d321528023",
+  "run_id": "20261123T000821Z-45fffe",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 2,
+  "execution_order": 17,
+  "max_repairs": 0,
+  "max_parallel": 3,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "tencent/hy4-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "tencent/hy4-flash"
+  },
+  "environment": {
+    "stack": "rails",
+    "language": "ruby",
+    "language_version": "3.4.3",
+    "framework": "rails",
+    "framework_version": "8.0.2",
+    "image_ref": "ai-benchmark/stack-rails:a4ece1137297b9bd",
+    "image_digest": "sha256:3382f95454306f72d7f54b561d1c89f4cf423c00941ae511c1eafe6095760fbe",
+    "agent_image_ref": "ai-benchmark/rails-commandcode:96fa297307efdb7b",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "3.4.3",
+      "framework": "8.0.5.2"
+    },
+    "framework_version_changed": null
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-23T00:41:14.084387Z",
+  "finished_at": "2026-11-23T00:46:30.050626Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 295.2272,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 295.2272,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 315.96626503858715,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1190729,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 14551,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1144320,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1205280,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 868,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 1683,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "e6748a1c75ce27ee423f68d10ab0dcd1f8378c7c",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "515374b3-7f78-4aea-aa5f-687e0a6513e3",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1190729,
+      "outputTokens": 14551,
+      "cacheReadTokens": 1144320,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 291577,
+    "finalText": "Implemented the URL shortener API with PostgreSQL persistence, validation, and click tracking. `sh start.sh` migrates and serves on 0.0.0.0:8000; all 7 integration tests pass and restart persistence is verified."
+  }
+}

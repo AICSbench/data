@@ -1,0 +1,228 @@
+{
+  "trial_id": "t-b18f26a285ce",
+  "run_id": "20261123T000821Z-45fffe",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 1,
+  "execution_order": 25,
+  "max_repairs": 0,
+  "max_parallel": 3,
+  "status": "passed",
+  "agent": {
+    "name": "commandcode",
+    "version": "1.91.1",
+    "requested_model": "tencent/hy4-flash",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Command Code's final result does not report a model"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "subscription",
+    "provider": null,
+    "endpoint_host": null,
+    "resolved_model": "tencent/hy4-flash"
+  },
+  "environment": {
+    "stack": "laravel13-boost",
+    "language": "php",
+    "language_version": "8.5.12",
+    "framework": "laravel",
+    "framework_version": "13.43.0",
+    "image_ref": "ai-benchmark/stack-laravel13-boost-13.43.0:69edc61baffde03c",
+    "image_digest": "sha256:c8534a9a95abef1a6c8b4df7c4ab7f4468d0d5050b72c2ce0ea39ea7e79279b0",
+    "agent_image_ref": "ai-benchmark/laravel13-boost-commandcode:830fa796ed2c4692",
+    "services": [
+      "mysql"
+    ],
+    "installed_versions": {
+      "language": "8.5.12",
+      "framework": "13.43.0",
+      "laravel/boost": "v2.10.4"
+    },
+    "framework_version_changed": false
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-23T00:55:29.384397Z",
+  "finished_at": "2026-11-23T00:59:51.542537Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 195.248913,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 195.248913,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 262.15816372353584,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": null,
+        "input_tokens": {
+          "value": 1776525,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "output_tokens": {
+          "value": 14590,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 1704960,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": null
+        },
+        "total_tokens": {
+          "value": 1791115,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "subscription auth: no per-run cost is billed"
+      },
+      "turns": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": null,
+        "note": null
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 353,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 8,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "1c3e9276801a79c0e8d50db202ddf256cb5a0594",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-mysql": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "type": "result",
+    "subtype": "success",
+    "sessionId": "82693cda-0ecc-4c21-b536-e7ffb303309b",
+    "stopReason": "end_turn",
+    "usage": {
+      "inputTokens": 1776525,
+      "outputTokens": 14590,
+      "cacheReadTokens": 1704960,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 193259,
+    "finalText": "Implemented the persistent URL shortener with MySQL-backed links, click tracking, validation, and JSON error responses; `sh start.sh` migrates and serves on `0.0.0.0:8000` in the foreground. All 19 tests pass, and I verified the API live—including persistence across a restart—then removed my test data and stopped the server."
+  }
+}
