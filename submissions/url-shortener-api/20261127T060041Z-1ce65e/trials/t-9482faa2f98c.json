@@ -1,0 +1,336 @@
+{
+  "trial_id": "t-9482faa2f98c",
+  "run_id": "20261127T060041Z-1ce65e",
+  "task_id": "url-shortener-api",
+  "task_version": "1",
+  "trial_index": 4,
+  "execution_order": 21,
+  "max_repairs": 0,
+  "max_parallel": 3,
+  "status": "passed",
+  "agent": {
+    "name": "amp",
+    "version": "0.0.1795276835-g0feb0c",
+    "requested_model": "openai/gpt-6-luna",
+    "reported_model": {
+      "value": null,
+      "availability": "unavailable",
+      "source": null,
+      "unit": null,
+      "note": "Amp routes across models; the CLI only echoes the requested mode or model and does not report which model(s) served the run"
+    },
+    "reasoning_effort": null,
+    "auth_mode": "api_key",
+    "provider": "openai",
+    "endpoint_host": null,
+    "resolved_model": "openai/gpt-6-luna"
+  },
+  "environment": {
+    "stack": "fastapi-latest",
+    "language": "python",
+    "language_version": "3.15.2",
+    "framework": "fastapi",
+    "framework_version": "0.162.6",
+    "image_ref": "ai-benchmark/stack-fastapi-latest-0.162.6:938981b895a89a22",
+    "image_digest": "sha256:f746c9c66f1355fbab736e9ba59083222732056f152a48d40761e6ed2ac23831",
+    "agent_image_ref": "ai-benchmark/fastapi-latest-amp:11004025032ead22",
+    "services": [
+      "postgres"
+    ],
+    "installed_versions": {
+      "language": "3.15.2",
+      "framework": "0.162.6"
+    },
+    "framework_version_changed": false
+  },
+  "tooling": {
+    "mode": "standard",
+    "enabled_tools": [],
+    "mcp_servers": []
+  },
+  "started_at": "2026-11-27T06:33:28.225781Z",
+  "finished_at": "2026-11-27T06:36:20.189249Z",
+  "metrics": {
+    "performance": {
+      "agent_execution_seconds": {
+        "value": 158.356846,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      },
+      "time_to_first_implementation_seconds": {
+        "value": 158.356846,
+        "availability": "available",
+        "source": "derived",
+        "unit": "s",
+        "note": "first agent attempt"
+      },
+      "time_to_all_tests_pass_seconds": {
+        "value": null,
+        "availability": "not_applicable",
+        "source": null,
+        "unit": null,
+        "note": "repair iterations are disabled"
+      },
+      "total_wall_clock_seconds": {
+        "value": 171.9634877620265,
+        "availability": "available",
+        "source": "measured",
+        "unit": "s",
+        "note": null
+      }
+    },
+    "usage": {
+      "tokens": {
+        "accounting_scheme": "amp",
+        "input_tokens": {
+          "value": 499500,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": "input + cache writes + cache reads"
+        },
+        "output_tokens": {
+          "value": 5339,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "cached_input_tokens": {
+          "value": 460032,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        },
+        "reasoning_tokens": {
+          "value": null,
+          "availability": "unavailable",
+          "source": null,
+          "unit": "tokens",
+          "note": "amp stream JSON does not report reasoning tokens"
+        },
+        "total_tokens": {
+          "value": 504839,
+          "availability": "available",
+          "source": "agent_reported",
+          "unit": "tokens",
+          "note": null
+        }
+      },
+      "cost": {
+        "value": null,
+        "availability": "unavailable",
+        "source": null,
+        "unit": "USD",
+        "note": "amp does not report per-run cost"
+      },
+      "turns": {
+        "value": 15,
+        "availability": "available",
+        "source": "agent_reported",
+        "unit": null,
+        "note": "agent turns"
+      }
+    },
+    "quality": {
+      "tests_passed": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_failed": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "tests_total": {
+        "value": 16,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "repair_iterations": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "retry_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      },
+      "manual_intervention_count": {
+        "value": 0,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "code": {
+      "lines_of_code": {
+        "value": 258,
+        "availability": "available",
+        "source": "measured",
+        "unit": "lines",
+        "note": "lines added since the initial state, excluding dependencies and lockfiles"
+      },
+      "files_changed": {
+        "value": 9,
+        "availability": "available",
+        "source": "measured",
+        "unit": null,
+        "note": null
+      }
+    },
+    "provider_specific": {}
+  },
+  "workspace_git_commit": "7cbb8c7c360f59b79ca324ac56409e5bfb511435",
+  "rate_limit_events": [],
+  "log_files": {
+    "agent-stdout": "",
+    "agent-stderr": "",
+    "acceptance-stdout": "",
+    "acceptance-stderr": "",
+    "app": "",
+    "acceptance-junit": "",
+    "container-postgres": "",
+    "container-app": ""
+  },
+  "error": null,
+  "raw": {
+    "session_id": "T-01a21bb5-8fda-7467-af71-f2daaffea517",
+    "agent_mode": "openai/gpt-6-luna",
+    "assistant_usage": [
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 27538,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 25,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 200,
+        "cache_read_input_tokens": 27392,
+        "output_tokens": 48,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 518,
+        "cache_read_input_tokens": 27392,
+        "output_tokens": 293,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 654,
+        "cache_read_input_tokens": 27776,
+        "output_tokens": 44,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 287,
+        "cache_read_input_tokens": 28288,
+        "output_tokens": 2701,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 6095,
+        "cache_read_input_tokens": 28416,
+        "output_tokens": 79,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 185,
+        "cache_read_input_tokens": 34432,
+        "output_tokens": 52,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 262,
+        "cache_read_input_tokens": 34432,
+        "output_tokens": 50,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 367,
+        "cache_read_input_tokens": 34560,
+        "output_tokens": 428,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 614,
+        "cache_read_input_tokens": 34816,
+        "output_tokens": 423,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 877,
+        "cache_read_input_tokens": 35328,
+        "output_tokens": 572,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 734,
+        "cache_read_input_tokens": 36096,
+        "output_tokens": 82,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 359,
+        "cache_read_input_tokens": 36736,
+        "output_tokens": 428,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 555,
+        "cache_read_input_tokens": 36992,
+        "output_tokens": 24,
+        "service_tier": "standard"
+      },
+      {
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 223,
+        "cache_read_input_tokens": 37376,
+        "output_tokens": 90,
+        "service_tier": "standard"
+      }
+    ],
+    "tool_calls": 15,
+    "tool_errors": 0,
+    "errors": [],
+    "result": {
+      "type": "result",
+      "subtype": "success",
+      "duration_ms": 154492,
+      "is_error": false,
+      "num_turns": 15,
+      "result": "Implemented the persistent URL shortener. `sh start.sh` applies Alembic migrations and starts the API on `0.0.0.0:8000`; setup instructions are in the README.\n\nVerified the API against the running PostgreSQL database: link creation and duplicate handling, retrieval, ordered listing, redirects with click counts, and 422/404 error responses. Python compilation also passed. The start script is executable.",
+      "session_id": "T-01a21bb5-8fda-7467-af71-f2daaffea517"
+    }
+  }
+}
